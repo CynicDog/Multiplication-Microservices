@@ -1,0 +1,14 @@
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/service/ChallengeGeneratorServiceImpl.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/service/ChallengeService.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/repository/ChallengeAttemptRepository.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/service/ChallengeServiceImpl.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/controller/ChallengeAttemptController.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/service/ChallengeGeneratorService.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/model/Challenge.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/user/model/User.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/controller/ChallengeController.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/configuration/JsonConfiguration.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/user/repository/UserRepository.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/MultiplicationServiceApplication.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/model/ChallengeAttemptDTO.java
+/Users/ginsenglee/IdeaProjects/multiplication/multiplication_service/src/main/java/com/example/multiplication_service/challenge/model/ChallengeAttempt.java

@@ -30,6 +30,6 @@ public class ScoreCard {
     private int score;
 
     public ScoreCard(final Long userId, final Long attemptId) {
-
+        this(null, userId, attemptId, System.currentTimeMillis(), DEFAULT_SCORE);
     }
 }

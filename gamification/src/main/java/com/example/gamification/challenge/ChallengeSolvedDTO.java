@@ -9,6 +9,6 @@ public class ChallengeSolvedDTO {
     int factorA;
     int factorB;
 
-    long uesrId;
+    long userId;
     String userAlias;
 }

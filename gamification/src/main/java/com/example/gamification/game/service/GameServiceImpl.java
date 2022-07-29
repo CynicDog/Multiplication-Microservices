@@ -47,6 +47,7 @@ class GameServiceImpl implements GameService {
             log.info("Attempt id {} is not correct. User {} does not get score.",
                     challenge.getAttemptId(),
                     challenge.getUserAlias());
+
             return new GameResult(0, List.of());
         }
     }
@@ -61,13 +62,15 @@ class GameServiceImpl implements GameService {
 
         List<ScoreCard> scoreCardList = scoreRepository
                 .findByUserIdOrderByScoreTimestampDesc(solvedChallenge.getUserId());
+
         Set<BadgeType> alreadyGotBadges = badgeRepository
                 .findByUserIdOrderByBadgeTimestampDesc(solvedChallenge.getUserId())
                 .stream()
                 .map(BadgeCard::getBadgeType)
                 .collect(Collectors.toSet());
 
-        List<BadgeCard> newBadgeCards = badgeProcessors.stream()
+        List<BadgeCard> newBadgeCards = badgeProcessors
+                .stream()
                 .filter(badgeProcessor -> !alreadyGotBadges.contains(badgeProcessor.badgeType()))
                 .map(badgeProcessor -> badgeProcessor.processForOptionalBadge(totalScore, scoreCardList, solvedChallenge))
                 .flatMap(Optional::stream)

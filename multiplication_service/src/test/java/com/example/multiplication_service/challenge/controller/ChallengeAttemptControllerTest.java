@@ -1,9 +1,9 @@
 package com.example.multiplication_service.challenge.controller;
 
-import com.example.multiplication_service.challenge.model.ChallengeAttempt;
-import com.example.multiplication_service.challenge.model.ChallengeAttemptDTO;
+import com.example.multiplication_service.challenge.domain.ChallengeAttempt;
+import com.example.multiplication_service.challenge.domain.ChallengeAttemptDTO;
 import com.example.multiplication_service.challenge.service.ChallengeService;
-import com.example.multiplication_service.user.model.User;
+import com.example.multiplication_service.user.domain.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;

@@ -1,4 +1,4 @@
-package com.example.multiplication_service.user.model;
+package com.example.multiplication_service.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

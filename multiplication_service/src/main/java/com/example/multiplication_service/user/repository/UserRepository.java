@@ -1,6 +1,6 @@
 package com.example.multiplication_service.user.repository;
 
-import com.example.multiplication_service.user.model.User;
+import com.example.multiplication_service.user.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

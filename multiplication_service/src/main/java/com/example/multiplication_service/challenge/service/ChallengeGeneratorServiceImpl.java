@@ -1,6 +1,6 @@
 package com.example.multiplication_service.challenge.service;
 
-import com.example.multiplication_service.challenge.model.Challenge;
+import com.example.multiplication_service.challenge.domain.Challenge;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;

@@ -1,6 +1,6 @@
 package com.example.multiplication_service.challenge.repository;
 
-import com.example.multiplication_service.challenge.model.ChallengeAttempt;
+import com.example.multiplication_service.challenge.domain.ChallengeAttempt;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

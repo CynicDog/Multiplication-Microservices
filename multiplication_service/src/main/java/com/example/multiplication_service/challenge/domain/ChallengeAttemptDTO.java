@@ -1,4 +1,4 @@
-package com.example.multiplication_service.challenge.model;
+package com.example.multiplication_service.challenge.domain;
 
 import lombok.Value;
 

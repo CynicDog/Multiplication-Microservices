@@ -1,9 +1,9 @@
 package com.example.multiplication_service.challenge.service;
 
-import com.example.multiplication_service.challenge.model.ChallengeAttempt;
-import com.example.multiplication_service.challenge.model.ChallengeAttemptDTO;
+import com.example.multiplication_service.challenge.domain.ChallengeAttempt;
+import com.example.multiplication_service.challenge.domain.ChallengeAttemptDTO;
 import com.example.multiplication_service.challenge.repository.ChallengeAttemptRepository;
-import com.example.multiplication_service.user.model.User;
+import com.example.multiplication_service.user.domain.User;
 import com.example.multiplication_service.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

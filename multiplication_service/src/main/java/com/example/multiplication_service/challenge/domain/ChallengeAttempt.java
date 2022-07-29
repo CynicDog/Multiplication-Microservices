@@ -1,6 +1,6 @@
-package com.example.multiplication_service.challenge.model;
+package com.example.multiplication_service.challenge.domain;
 
-import com.example.multiplication_service.user.model.User;
+import com.example.multiplication_service.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

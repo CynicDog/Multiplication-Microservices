@@ -1,5 +1,8 @@
 package com.example.gamification.game.service;
 
+import com.example.gamification.game.processors.BadgeProcessor;
+import com.example.gamification.game.repository.BadgeRepository;
+import com.example.gamification.game.repository.ScoreRepository;
 import com.example.gamification.game.service.GameService.GameResult;
 import com.example.gamification.challenge.ChallengeSolvedDTO;
 import com.example.gamification.game.domain.BadgeCard;
@@ -19,20 +22,22 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-public class GameServiceImpl {
+public class GameServiceImplTest {
 
     private GameServiceImpl gameService;
+
     @Mock
     private ScoreRepository scoreRepository;
+
     @Mock
     private BadgeRepository badgeRepository;
+
     @Mock
     private BadgeProcessor badgeProcessor;
 
     @BeforeEach
     public void setUp() {
-
-        gameService = gameServiceImpl(scoreRepository, badgeRepository, List.of(badgeProcessor));
+        gameService = new GameServiceImpl(scoreRepository, badgeRepository, List.of(badgeProcessor));
     }
 
     @Test void processCorrectAttemptTest() {
@@ -47,7 +52,7 @@ public class GameServiceImpl {
         given(scoreRepository.getTotalScoreForUser(userId)).willReturn(Optional.of(10));
         given(scoreRepository.findByUserIdOrderByScoreTimestampDesc(userId)).willReturn(List.of(scoreCard));
         given(badgeRepository.findByUserIdOrderByBadgeTimestampDesc(userId)).willReturn(List.of(new BadgeCard(userId, BadgeType.FIRST_WON)));
-        given(badgeProcessor.badgeType()).willREturn(BadgeType.LUCKY_NUMBER);
+        given(badgeProcessor.badgeType()).willReturn(BadgeType.LUCKY_NUMBER);
         given(badgeProcessor.processForOptionalBadge(10, List.of(scoreCard), attempt)).willReturn(Optional.of(BadgeType.LUCKY_NUMBER));
 
         // when

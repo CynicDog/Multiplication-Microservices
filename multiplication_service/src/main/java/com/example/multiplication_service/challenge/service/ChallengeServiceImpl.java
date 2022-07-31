@@ -7,6 +7,7 @@ import com.example.multiplication_service.user.domain.User;
 import com.example.multiplication_service.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
     private final UserRepository userRepository;
     private final ChallengeAttemptRepository attemptRepository;
+    private final GamificationServiceClient gameClient;
 
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO attemptDTO) {
@@ -42,6 +44,8 @@ public class ChallengeServiceImpl implements ChallengeService {
         );
 
         ChallengeAttempt storedAttempt = attemptRepository.save(checkedAttempt);
+
+        gameClient.sendAttempt(storedAttempt);
 
         return storedAttempt;
     }

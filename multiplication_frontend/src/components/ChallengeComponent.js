@@ -1,6 +1,7 @@
 import * as React from "react";
-import ApiClient from "../services/ApiClient";
+import ChallengeApiClient from "../services/ChallengeApiClient";
 import LastAttemptsComponent from './LastAttemptsComponent';
+import LeaderBoardComponent from "./LeaderBoardComponent";
 
 class ChallengeComponent extends React.Component {
 
@@ -22,7 +23,7 @@ class ChallengeComponent extends React.Component {
     }
 
     refreshChallenge() {
-        ApiClient.challenge().then(
+        ChallengeApiClient.challenge().then(
             res => {
                 if (res.ok) {
                     res.json().then(json => {
@@ -47,7 +48,7 @@ class ChallengeComponent extends React.Component {
 
     handleSubmitResult(event) {
         event.preventDefault();
-        ApiClient.sendGuess(this.state.user, this.state.a, this.state.b, this.state.guess).then(res => {
+        ChallengeApiClient.sendGuess(this.state.user, this.state.a, this.state.b, this.state.guess).then(res => {
                 if (res.ok) {
                     res.json().then(json => {
                         if (json.correct) {
@@ -72,7 +73,7 @@ class ChallengeComponent extends React.Component {
     }
 
     updateLastAttempts(userAlias: string) {
-        ApiClient.getAttempts(userAlias).then(res => {
+        ChallengeApiClient.getAttempts(userAlias).then(res => {
             if (res.ok) {
                 let attempts: Attempt[] = [];
                 res.json().then(data => {
@@ -119,6 +120,7 @@ class ChallengeComponent extends React.Component {
                 {this.state.lastAttempts.length > 0 &&
                     <LastAttemptsComponent lastAttempts={this.state.lastAttempts}/>
                 }
+                <LeaderBoardComponent />
             </div>
         );
     }

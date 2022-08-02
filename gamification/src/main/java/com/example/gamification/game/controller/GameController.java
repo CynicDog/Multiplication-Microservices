@@ -1,6 +1,6 @@
 package com.example.gamification.game.controller;
 
-import com.example.gamification.challenge.ChallengeSolvedDTO;
+import com.example.gamification.challenge.domain.ChallengeSolvedDTO;
 import com.example.gamification.game.service.GameService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

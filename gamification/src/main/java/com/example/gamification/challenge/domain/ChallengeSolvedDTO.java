@@ -1,4 +1,4 @@
-package com.example.multiplication_service.challenge.domain;
+package com.example.gamification.challenge.domain;
 
 import lombok.Value;
 
@@ -8,6 +8,7 @@ public class ChallengeSolvedDTO {
     boolean correct;
     int factorA;
     int factorB;
+
     long userId;
     String userAlias;
 }

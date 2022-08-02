@@ -4,7 +4,7 @@ import com.example.gamification.game.processors.BadgeProcessor;
 import com.example.gamification.game.repository.BadgeRepository;
 import com.example.gamification.game.repository.ScoreRepository;
 import com.example.gamification.game.service.GameService.GameResult;
-import com.example.gamification.challenge.ChallengeSolvedDTO;
+import com.example.gamification.challenge.domain.ChallengeSolvedDTO;
 import com.example.gamification.game.domain.BadgeCard;
 import com.example.gamification.game.domain.BadgeType;
 import com.example.gamification.game.domain.ScoreCard;

@@ -33,11 +33,11 @@ public class ChallengeServiceTest {
     private ChallengeAttemptRepository attemptRepository;
 
     @Mock
-    private GamificationServiceClient gameClient;
+    private ChallengeEventPublisher challengeEventPublisher;
 
     @BeforeEach
     public void setUp() {
-        challengeService = new ChallengeServiceImpl(userRepository, attemptRepository, gameClient);
+        challengeService = new ChallengeServiceImpl(userRepository, attemptRepository, challengeEventPublisher);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class ChallengeServiceTest {
 
         verify(userRepository).save(new User("john"));
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPublisher).challengeSolved(resultAttempt);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class ChallengeServiceTest {
 
         verify(userRepository).save(new User("john"));
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPublisher).challengeSolved(resultAttempt);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class ChallengeServiceTest {
 
         verify(userRepository, never()).save(any());
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPublisher).challengeSolved(resultAttempt);
     }
 
     @Test

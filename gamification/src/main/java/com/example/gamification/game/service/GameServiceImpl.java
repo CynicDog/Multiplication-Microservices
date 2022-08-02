@@ -1,6 +1,6 @@
 package com.example.gamification.game.service;
 
-import com.example.gamification.challenge.ChallengeSolvedDTO;
+import com.example.gamification.challenge.domain.ChallengeSolvedDTO;
 import com.example.gamification.game.domain.BadgeCard;
 import com.example.gamification.game.domain.BadgeType;
 import com.example.gamification.game.domain.ScoreCard;

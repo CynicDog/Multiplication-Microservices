@@ -20,7 +20,7 @@ public class ChallengeEventPublisher {
 
     public void challengeSolved(final ChallengeAttempt challengeAttempt) {
         ChallengeSolvedEvent event = buildEvent(challengeAttempt);
-        String routingKey = "attempt." + (event.isCorrect() ? "correct": "wrong");
+        String routingKey = "attempt." + (event.isCorrect() ? "correct" : "wrong");
 
         amqpTemplate.convertAndSend(challengesTopicExchange, routingKey, event);
     }

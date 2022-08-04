@@ -4,7 +4,7 @@ import com.example.gamification.game.processors.BadgeProcessor;
 import com.example.gamification.game.repository.BadgeRepository;
 import com.example.gamification.game.repository.ScoreRepository;
 import com.example.gamification.game.service.GameService.GameResult;
-import com.example.gamification.challenge.domain.ChallengeSolvedDTO;
+import com.example.gamification.challenge.domain.ChallengeSolvedEvent;
 import com.example.gamification.game.domain.BadgeCard;
 import com.example.gamification.game.domain.BadgeType;
 import com.example.gamification.game.domain.ScoreCard;
@@ -45,7 +45,7 @@ public class GameServiceImplTest {
         // given
         long userId = 1L, attemptId = 10L;
 
-        var attempt = new ChallengeSolvedDTO(attemptId, true, 20, 80, userId, "john");
+        var attempt = new ChallengeSolvedEvent(attemptId, true, 20, 80, userId, "john");
 
         ScoreCard scoreCard = new ScoreCard(userId, attemptId);
 
@@ -68,7 +68,7 @@ public class GameServiceImplTest {
     @Test void processWrongAttemptTest() {
 
         // when
-        GameResult gameResult = gameService.newAttemptForUser(new ChallengeSolvedDTO(10L, false, 10, 10, 1L, "john"));
+        GameResult gameResult = gameService.newAttemptForUser(new ChallengeSolvedEvent(10L, false, 10, 10, 1L, "john"));
 
         // then
         then(gameResult).isEqualTo(new GameResult(0, List.of()));

@@ -1,6 +1,6 @@
 package com.example.gamification.game.processors;
 
-import com.example.gamification.challenge.domain.ChallengeSolvedDTO;
+import com.example.gamification.challenge.domain.ChallengeSolvedEvent;
 import com.example.gamification.game.domain.BadgeType;
 import com.example.gamification.game.domain.ScoreCard;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ public class GoldBadgeProcessor implements BadgeProcessor {
     public Optional<BadgeType> processForOptionalBadge(
             int currentScore,
             List<ScoreCard> scoreCardList,
-            ChallengeSolvedDTO solved) {
+            ChallengeSolvedEvent solved) {
 
         return currentScore > 400 ? Optional.of(BadgeType.SILVER) : Optional.empty();
     }

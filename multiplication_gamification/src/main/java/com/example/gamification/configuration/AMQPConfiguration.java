@@ -25,6 +25,9 @@ public class AMQPConfiguration {
     public Queue gamificationQueue(@Value("${amqp.queue.gamification}") final String queueName) {
         return QueueBuilder
                 .durable(queueName)
+//                 Or if you want to set limitation of duration on queues, you can:
+//                .ttl((int) Duration.ofHours(6).toMillis())
+//                .maxLength(25000)
                 .build();
     }
 
